@@ -2,11 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Style Markdown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css"
+    />
   </head>
   <body>
-    Body
+    <article class="markdown-body" id="content"></article>
+
+    <script>
+      fetch("docs/index.md")
+        .then((res) => res.text())
+        .then((md) => {
+          document.getElementById("content").innerHTML = marked.parse(md);
+        });
+    </script>
   </body>
 </html>
