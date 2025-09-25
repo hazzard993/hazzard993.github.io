@@ -3,9 +3,9 @@ export default (eleventyConfig) => {
 
   return {
     dir: {
-      input: "pages",
-      output: "_site",
-      includes: "../_includes",
+      input: "src/pages",
+      output: "_jekyll",
+      includes: "../includes",
     },
   };
 };
