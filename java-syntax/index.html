@@ -15,8 +15,229 @@
     />
   </head>
   <body>
-    <main class="markdown-body"><h1>Java Syntax</h1>
-<p><a href="/">Home</a></p>
+    <main class="markdown-body"><h1 id="java-syntax" tabindex="-1">Java Syntax</h1>
+<p>Some terminology to help navigate around Java syntax.</p>
+<p>For junior devs and up!</p>
+<h2 id="hello-world" tabindex="-1">Hello World</h2>
+<p>A common hello world program consists of:</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This page will attempt to teach you Java with just 3 components that you already
+see in this program above:</p>
+<ul>
+<li><a href="#class-header">Class Header</a></li>
+<li><a href="#method-signature">Method Signature</a></li>
+<li><a href="#statement">Statement</a></li>
+</ul>
+<p>Click through them, and go through the <a href="#practice-run">practice run</a>.</p>
+<p>Then, we go to <a href="#the-gauntlet">the gauntlet</a> where we drill code into your head!</p>
+<p> </p>
+<h3 id="class-header" tabindex="-1">Class Header</h3>
+<p>Contains the class name, used at the beginning of a class.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span> class Main {
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<pre><code>class Main
+class Foo
+class Foo extends Bar
+class Foo implements FooBar
+class Foo extends Bar implements FooBar
+class Foo extends Bar implements FooBar, FooBaz
+</code></pre>
+<blockquote>
+<p>Also called a class signature, a class declaration, or a class definition.</p>
+</blockquote>
+<p>Written in <em>PascalCase</em>, matches the filename, and is only defined once per
+file.</p>
+<table>
+<thead>
+<tr>
+<th><a href="#java-syntax">Back to top</a></th>
+</tr>
+</thead>
+</table>
+<h3 id="method-signature" tabindex="-1">Method Signature</h3>
+<p>Contains the method name, used at the beginning of a method.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>   public static void main(String[] args) {
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<pre><code>public static void main(String[] args)    // public access
+private static void main(String[] args)   // private access
+protected static void main(String[] args) // protected access
+public static void main(String[] args)    // static method
+public void main(String[] args)           // method
+</code></pre>
+<blockquote>
+<p>Also called a method declaration, a method definition, or a method header.</p>
+</blockquote>
+<p>Written in <em>camelCase</em>, can be defined more than once.</p>
+<table>
+<thead>
+<tr>
+<th><a href="#java-syntax">Back to top</a></th>
+</tr>
+</thead>
+</table>
+<h3 id="statement" tabindex="-1">Statement</h3>
+<p>Statements are one of many things. But they can only be inside of code blocks.</p>
+<p>This one is a call expression because it uses <code>()</code> to call/invoke something.</p>
+<p>Statements do things! Can't do much without them.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     System.out.println("Hello World!");
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<pre><code>System.out.println(&quot;Hello World!&quot;);
+System.out.printf(&quot;Hello %s!&quot;, &quot;World&quot;);
+System.out.flush();
+</code></pre>
+<p>This is absolutely not exhaustive, this is only one kind of statement.</p>
+<table>
+<thead>
+<tr>
+<th><a href="#java-syntax">Back to top</a></th>
+</tr>
+</thead>
+</table>
+<p> </p>
+<h2 id="practice-run" tabindex="-1">Practice run</h2>
+<p>Change class name from &quot;Main&quot; to &quot;Foo&quot; in class header.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span> class Main {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span> class Foo {
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Extend &quot;Main&quot; with &quot;Foo&quot;.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span> class Main {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span> class Main extends Foo {
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Change method from &quot;main&quot; to &quot;foobar&quot;.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>   public static void foobar(String[] args) {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>   public static void foobar(String[] args) {
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Change class name from Main to Foobar in class header.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>     System.out.println("Hello World!");
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     System.out.println("Hello!");
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<table>
+<thead>
+<tr>
+<th><a href="#java-syntax">Back to top</a></th>
+</tr>
+</thead>
+</table>
+<p> </p>
+<h2 id="the-gauntlet" tabindex="-1">The Gauntlet</h2>
+<p>This is a bunch of code examples you can follow along to.</p>
+<p>So, get yourself ready.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Compiling and running this? If so, good!</p>
+<p>You can swap the code below with any of the samples below (removing the + and -
+from the start of the lines of course).</p>
+<p>Read the message, review the code, extra points for playing with the code
+yourself.</p>
+<p> </p>
+<h3 id="numbers-and-iteration" tabindex="-1">Numbers and Iteration</h3>
+<p>Declare variable &quot;number&quot;. An &quot;int&quot; type with an initial value of 0.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     int number = 0;
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Print variable &quot;number&quot; to the console.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     int number = 0;
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     System.out.println(number);
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Increment variable &quot;number&quot; by 1 before printing.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     int number = 0;
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     number += 1;
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>     System.out.println(number);
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Change plus equals to plus plus to increment variable &quot;number&quot; by 1.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     int number = 0;
+</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>     number += 1;
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     number++;
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>     System.out.println(number);
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Print numbers 0 to 19 using a while loop.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+<span class="token prefix unchanged"> </span>     int number = 0;
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     while (number &lt; 20) {
+<span class="token prefix inserted">+</span>       System.out.println(number);
+<span class="token prefix inserted">+</span>       number++;
+<span class="token prefix inserted">+</span>     }
+</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>     System.out.println(number);
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p> </p>
+<p>Let's review. We have 4 statements in our method.</p>
+<pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
+<span class="token prefix unchanged"> </span>   public static void main(String[] args) {
+</span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>     int number = 0;
+<span class="token prefix inserted">+</span>     while (number &lt; 20) {
+<span class="token prefix inserted">+</span>       System.out.println(number);
+<span class="token prefix inserted">+</span>       number++;
+</span><span class="token unchanged"><span class="token prefix unchanged"> </span>     }
+<span class="token prefix unchanged"> </span>   }
+<span class="token prefix unchanged"> </span> }
+</span></code></pre>
+<p>And 2 of those statements are inside our &quot;while&quot; loop.</p>
+<ul>
+<li><code>int number = 0;</code> is a variable declaration statement</li>
+<li><code>while (number &lt; 20) {</code> is a while statement</li>
+<li><code>System.out.println(number);</code> is a call expression statement</li>
+<li><code>number++;</code> is a unary expression statement</li>
+</ul>
 </main>
   </body>
 </html>
