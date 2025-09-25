@@ -23,7 +23,8 @@ title: Home
 
 ```diff
   function foo() {
--   const x = 0;
-+   const x = 10;
+    const x = 100;
+-   const x = 100;
++   const x = 100;
   }
 ```
