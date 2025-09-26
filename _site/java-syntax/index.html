@@ -131,14 +131,14 @@ System.out.flush();
 <p> </p>
 <p>Change method from &quot;main&quot; to &quot;foobar&quot;.</p>
 <pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
-</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>   public static void foobar(String[] args) {
+</span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>   public static void main(String[] args) {
 </span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span>   public static void foobar(String[] args) {
 </span><span class="token unchanged"><span class="token prefix unchanged"> </span>     System.out.println("Hello World!");
 <span class="token prefix unchanged"> </span>   }
 <span class="token prefix unchanged"> </span> }
 </span></code></pre>
 <p> </p>
-<p>Change class name from Main to Foobar in class header.</p>
+<p>Change println call to just print &quot;Hello!&quot; instead of &quot;Hello World!&quot;.</p>
 <pre class="language-diff"><code class="language-diff"><span class="token unchanged"><span class="token prefix unchanged"> </span> class Main {
 <span class="token prefix unchanged"> </span>   public static void main(String[] args) {
 </span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span>     System.out.println("Hello World!");

@@ -151,7 +151,7 @@ Change method from "main" to "foobar".
 
 ```diff
   class Main {
--   public static void foobar(String[] args) {
+-   public static void main(String[] args) {
 +   public static void foobar(String[] args) {
       System.out.println("Hello World!");
     }
@@ -160,7 +160,7 @@ Change method from "main" to "foobar".
 
 &nbsp;
 
-Change class name from Main to Foobar in class header.
+Change println call to just print "Hello!" instead of "Hello World!".
 
 ```diff
   class Main {
